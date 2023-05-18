@@ -43,4 +43,7 @@ class MainCategory extends Model
         return $this->hasMany('App\Models\Store\Product', 'main_category_id', 'id');
     }
 
+    public function getActive(){
+        return $this->active == 1 ? 'مفعل' : 'غير مفعل';
+    }
 }

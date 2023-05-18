@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
             Route::get('user-profile', 'userProfile');
         });
         Route::controller(StoreController::class)->group(function (){
+            Route::get('index', 'index');
             Route::get('home', 'home');
             Route::get('main-categories', 'mainCategories');
             Route::get('main-category/{id}',  'mainCategory');

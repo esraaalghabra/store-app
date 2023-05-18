@@ -18,10 +18,13 @@ class StoreController extends Controller
         $mainCategories = MainCategory::selection()->get();
         if (!$mainCategories)
             return $this->handleResponseData(null, 'data not exist', StatusCodeRequest::NO_CONTENT);
+        $subCategories = SubCategory::selection()->get();
+        if (!$subCategories)
+            return $this->handleResponseData(null, 'data not exist', StatusCodeRequest::NO_CONTENT);
         $products=Product::selection()->get();
         if (!$products)
             return $this->handleResponseData(null, 'data not exist', StatusCodeRequest::NO_CONTENT);
-        return $this->handleResponseData(['mainCategories'=>$mainCategories,'products'=>$products]
+        return $this->handleResponseData(['mainCategories'=>$mainCategories,'subCategories'=>$subCategories,'products'=>$products]
             , 'success', StatusCodeRequest::OK);
     }
     public function mainCategories(){
@@ -65,3 +68,4 @@ class StoreController extends Controller
     }
 
 }
+

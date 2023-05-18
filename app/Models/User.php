@@ -13,7 +13,7 @@ class User extends Authenticatable implements JWTSubject,MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = [
+    protected   $fillable = [
         'name',
         'email',
         'password',

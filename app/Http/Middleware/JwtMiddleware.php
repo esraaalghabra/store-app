@@ -25,6 +25,7 @@ class JwtMiddleware
             else
                 return $this->handleResponse('Authorization Token not found',StatusCodeRequest::UNAUTHORISED);
         }
+
         return $next($request);
     }
 }
